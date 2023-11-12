@@ -1,0 +1,10 @@
+{
+    "title": "Rain World FP iterator main bus music for SE mod",
+    "name": "RainWorld-se-supercomputer-sound",
+    "author": "asvdev(Dial-up)",
+    "factorio_version": "1.1",
+    "version": "0.1.0",
+    "dependencies": ["base >= 1.1", "space-exploration"],
+    "description": "",
+    "homepage": "https://github.com/asvdvl/RainWorld-se-supercomputer-sound"
+}
