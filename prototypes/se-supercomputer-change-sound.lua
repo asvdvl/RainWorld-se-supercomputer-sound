@@ -27,7 +27,7 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
           max_sounds_per_type = 1
         }
         proto_number = tonumber(proto_number)
-        if proto_number >= 1 and proto_number <= 4 then
+        if proto_number >= 1 and proto_number <= 3 then
           prototype.working_sound.sound.filename = file_prefix..tostring(proto_number)..".ogg"
           --Also, the structure above is the default sound, so I need to set limit to default
           prototype.working_sound.max_sounds_per_type = nil
