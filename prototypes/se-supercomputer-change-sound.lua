@@ -1,5 +1,6 @@
 for _, prototype in pairs(data.raw["assembling-machine"]) do
     --quality programming
+    local file_prefix = "__RainWorld-se-supercomputer-sound__/sound/rw-randomGods-sc-"
     local _, _, proto_name, proto_number = string.find(prototype.name, "(.+)-(%d+)$")
 
     if not proto_name or not proto_number then
@@ -11,13 +12,25 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
         {
           sound = {
             {
-              filename = "__RainWorld-se-supercomputer-sound__/sound/rw-randomGods.ogg",
+              --here I rewrite the entire prototype with music for the “highest tier”, 
+              --but below I manually rewrite this line for tier 1 to 3
+              filename = file_prefix.."4.ogg",
               volume = 0.7
             },
           },
           fade_in_ticks = 60,
           fade_out_ticks = 60,
-          max_sounds_per_type = 2,
+          use_doppler_shift = false,
+          --this particular sound is very bad for random playback and I can't find a way to sync it(thanks wube),
+          --https://mods.factorio.com/mod/LabDansen/discussion/5f57d24e583b0dbdf3587194
+          --so that makes things a lot better
+          max_sounds_per_type = 1
         }
+        proto_number = tonumber(proto_number)
+        if proto_number >= 1 and proto_number <= 4 then
+          prototype.working_sound.sound.filename = file_prefix..tostring(proto_number)..".ogg"
+          --Also, the structure above is the default sound, so I need to set limit to default
+          prototype.working_sound.max_sounds_per_type = nil
+        end
     end
 end
