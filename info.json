@@ -3,7 +3,7 @@
     "name": "RainWorld-se-supercomputer-sound",
     "author": "asvdev(in game - Dial-up)",
     "factorio_version": "1.1",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "dependencies": ["base >= 1.1", "space-exploration"],
     "description": "",
     "homepage": "https://github.com/asvdvl/RainWorld-se-supercomputer-sound"
