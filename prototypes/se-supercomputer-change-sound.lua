@@ -19,8 +19,8 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
                 volume = settings.startup["volume"].value
               },
             },
-            fade_in_ticks = settings.startup["fade_in_ticks"].value,
-            fade_out_ticks = settings.startup["fade_out_ticks"].value,
+            fade_in_ticks = 30,
+            fade_out_ticks = 30,
             use_doppler_shift = settings.startup["use_doppler_shift"].value,
             --this particular sound is very bad for random playback and I can't find a way to sync it(thanks wube),
             --https://mods.factorio.com/mod/LabDansen/discussion/5f57d24e583b0dbdf3587194
@@ -41,8 +41,6 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
                 filename = "__base__/sound/silence-1sec.ogg",
                 volume = 0
               }
-              --max_sounds_per_type = 255,
-              --persistent = true
             }
           }
         end
