@@ -9,10 +9,10 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
 
     if proto_name and proto_number then
       if proto_name == "se-space-supercomputer" then
-      --just to check the working mechanisms and reduce loading time
-      --if proto_name == "assembling-machine" then 
+      --just to check the code logic and reduce loading time
+      --if proto_name == "assembling-machine" then
         if settings.startup["debug"].value then
-          log('found prototype '..proto_name..' and '..proto_number..', change sound')
+          log('found prototype '..proto_name..' with number '..proto_number..', change sound')
         end
 
         prototype.working_sound =
@@ -38,13 +38,13 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
         if proto_number >= 1 and proto_number <= 3 then
           prototype.working_sound.sound.filename = file_prefix..tostring(proto_number)..".ogg"
           --Also, the structure above is the default sound, so I need to set limit to default
-          prototype.working_sound.max_sounds_per_type = nil
+          --prototype.working_sound.max_sounds_per_type = nil
         end
 
         if not settings.startup["use_simple_sound_system"].value then
           --the new system creates hidden entities that make sound, so we need to turn off external(not into gui) sound on computers
           if settings.startup["debug"].value then
-            log('apply audible_distance_modifier')
+            log('use_simple_sound_system is disabled, apply tweaks')
           end
           prototype.working_sound.audible_distance_modifier = 0
         end
