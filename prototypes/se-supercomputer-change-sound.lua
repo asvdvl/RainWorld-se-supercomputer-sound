@@ -1,6 +1,11 @@
+local file_prefix = "__RainWorld-se-supercomputer-sound__/sound/rw-randomGods-sc-"
+local proto_prefix = settings.startup["rwse-working_proto_prefix"].value
+if proto_prefix == "<custom>" then
+  proto_prefix = settings.startup["rwse-working_proto_prefix_custom"].value
+end
+
 for _, prototype in pairs(data.raw["assembling-machine"]) do
   --quality programming
-  local file_prefix = "__RainWorld-se-supercomputer-sound__/sound/rw-randomGods-sc-"
   local _, _, proto_name, proto_number = string.find(prototype.name, "(.+)-(%d+)$")
 
   if settings.startup["rwse-debug"].value then
@@ -8,9 +13,7 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
   end
 
   if proto_name and proto_number then
-    if proto_name == "se-space-supercomputer" then
-    --just to check the code logic and reduce loading time
-    --if proto_name == "assembling-machine" then
+    if proto_name == proto_prefix then
       if settings.startup["rwse-debug"].value then
         log('found prototype '..proto_name..' with number '..proto_number..', change sound')
       end
