@@ -51,6 +51,7 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
                 prototype.working_sound.audible_distance_modifier = 0
                 prototype.working_sound.max_sounds_per_type = nil
             end
+            protoList[prototype.name] = prototype
         end
     end
 end
