@@ -1,20 +1,22 @@
 local file_prefix = "__RainWorld-se-supercomputer-sound__/sound/rw-randomGods-sc-"
-local proto_prefix = settings.startup["rwse-working_proto_prefix"].value
+local startup = settings.startup
+local debug = startup["rwse-debug"].value
+local proto_prefix = startup["rwse-working_proto_prefix"].value
 if proto_prefix == "<custom>" then
-    proto_prefix = settings.startup["rwse-working_proto_prefix_custom"].value
+    proto_prefix = startup["rwse-working_proto_prefix_custom"].value
 end
 
 for _, prototype in pairs(data.raw["assembling-machine"]) do
     --quality programming
     local _, _, proto_name, proto_number = string.find(prototype.name, "(.+)-(%d+)$")
 
-    if settings.startup["rwse-debug"].value then
+    if debug then
         log('parse '..prototype.name)
     end
 
     if proto_name and proto_number then
         if proto_name == proto_prefix then
-            if settings.startup["rwse-debug"].value then
+            if debug then
                 log('found prototype '..proto_name..' with number '..proto_number..', change sound')
             end
 
@@ -24,7 +26,7 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
                         --here I rewrite the entire prototype with music for the “highest tier”, 
                         --but below I manually rewrite this line for tier 1 to 3
                         filename = file_prefix.."4.ogg",
-                        volume = settings.startup["rwse-volume"].value
+                        volume = startup["rwse-volume"].value
                     },
                 },
                 fade_in_ticks = 30,
@@ -43,9 +45,9 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
                 prototype.working_sound.max_sounds_per_type = nil
             end
 
-            if not settings.startup["rwse-use_simple_sound_system"].value then
+            if not startup["rwse-use_simple_sound_system"].value then
                 --the new system creates hidden entities that make sound, so we need to turn off external(not into gui) sound on computers
-                if settings.startup["rwse-debug"].value then
+                if debug then
                     log('use_simple_sound_system is disabled, apply tweaks')
                 end
                 prototype.working_sound.audible_distance_modifier = 0
