@@ -22,12 +22,11 @@ for _, prototype in pairs(data.raw["assembling-machine"]) do
 
             prototype.working_sound =
             {
-                sound = {{
-                        --here I rewrite the entire prototype with music for the “highest tier”, 
-                        --but below I manually rewrite this line for tier 1 to 3
-                        filename = file_prefix.."4.ogg",
-                        volume = startup["rwse-volume"].value
-                    },
+                sound = {
+                    --here I rewrite the entire prototype with music for the “highest tier”, 
+                    --but below I manually rewrite this line for tier 1 to 3
+                    filename = file_prefix.."4.ogg",
+                    volume = startup["rwse-volume"].value
                 },
                 fade_in_ticks = 30,
                 fade_out_ticks = 30,
