@@ -1,14 +1,33 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 05.01.2024
+  Major Features:
+    - Now the audio playback is completely synchronized!
+    - New entity “sound emitter” (base entity for the next part of the mod)
+    - The mod now has 3 levels of possible integration, from regular sound replacement to full synchronized playback
+    - Can work not only with SE, at least assemblers from vanilla are also supported (used for debugging)
+  Changes:
+    - All settings have been renamed for 2 reasons: to reset them for players and to prevent conflicts with other settings
+    - Fade in/fade out/doppler shift/max sounds per type are now hardcoded
+  Debug:
+    - Added setting enabling debug mode
+  Info:
+    - Factorio is my favorite game. was, before I sat down to write this mod, if you are interested, look for my comments in the code and commits.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
+Date: 14.11.2023
   Changes:
     - added external settings. just because
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
+Date: 13.11.2023
   Changes:
     - Now different sounds for different computers
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
+Date: 13.11.2023
   Changes:
     - Base functional
