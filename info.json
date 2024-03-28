@@ -6,5 +6,12 @@
     "version": "0.3.0",
     "dependencies": ["base >= 1.0", "?space-exploration"],
     "description": "",
-    "homepage": "https://github.com/asvdvl/RainWorld-se-supercomputer-sound"
+    "homepage": "https://github.com/asvdvl/RainWorld-se-supercomputer-sound",
+    "package":{
+        "ignore":[
+            "*.kra",
+            "sound/*.7z",
+            "sound/*.aup3"
+        ]
+    }
 }
