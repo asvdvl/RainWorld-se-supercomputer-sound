@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2026-11-11
+  Changes:
+    - ported to 2.1
+    - safer prototype lookup (works for unnumbered supercomputer prototypes too)
+    - added a log line when a sound is applied
+  Bugfixes:
+    - requires factorio-sync-sound-manager 1.0.2 (emitters were silent in 1.0.1)
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-09-24
   Changes:
